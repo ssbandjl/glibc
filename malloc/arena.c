@@ -304,6 +304,7 @@ next_env_entry (char ***position)
 static void tcache_key_initialize (void);
 #endif
 
+// 该函数进行初始化，然后调用 libc_malloc 函数
 static void
 ptmalloc_init (void)
 {

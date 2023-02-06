@@ -518,7 +518,7 @@
 # define atomic_write_barrier() atomic_full_barrier ()
 #endif
 
-
+// 原子强制读 typeof是返回类型，后面的是一段汇编代码，此处看内联汇编。该宏定义操作就是原子读，源代码处就是把malloc_hook函数地址放入任意寄存器再取出
 #ifndef atomic_forced_read
 # define atomic_forced_read(x) \
   ({ __typeof (x) __x; __asm ("" : "=r" (__x) : "0" (x)); __x; })

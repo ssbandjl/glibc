@@ -1,5 +1,5 @@
-/* Define MALLOC_ALIGNMENT for malloc.  Generic version.
    Copyright (C) 2017-2023 Free Software Foundation, Inc.
+/* Define MALLOC_ALIGNMENT for malloc.  Generic version.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -23,7 +23,9 @@
    must be a power of two at least 2 * SIZE_SZ, even on machines for
    which smaller alignments would suffice. It may be defined as larger
    than this though. Note however that code and data structures are
-   optimized for the case of 8-byte alignment.  */
+   optimized for the case of 8-byte alignment.  
+   MALLOC_ALIGNMENT 是 malloc 块的最小对齐。 它必须是至少 2 * SIZE_SZ 的 2 的幂，即使在较小对齐就足够的机器上也是如此。 它可能被定义为比这更大。 但是请注意，代码和数据结构针对 8 字节对齐的情况进行了优化
+   MALLOC_ALIGNMENT在32位下是8个字节，64位下是16个字节的无符号整数 */
 #define MALLOC_ALIGNMENT (2 * SIZE_SZ < __alignof__ (long double) \
 			  ? __alignof__ (long double) : 2 * SIZE_SZ)
 

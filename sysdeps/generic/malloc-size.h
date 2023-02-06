@@ -53,7 +53,7 @@
 # define INTERNAL_SIZE_T size_t
 #endif
 
-/* The corresponding word size.  */
+/* The corresponding word size. INTERNAL_SIZE_T和SIZE_SZ相同，在32位下是4个字节，64位下是8个字节的无符号整数 */
 #define SIZE_SZ (sizeof (INTERNAL_SIZE_T))
 
 #include <malloc-alignment.h>
